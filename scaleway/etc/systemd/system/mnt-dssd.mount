@@ -1,0 +1,11 @@
+[Unit]
+Description=Mount DSSD Volume at boot
+
+[Mount]
+What=UUID="run: sudo blkid -p --output value /dev/sda1 | head -n 1"
+Where=/mnt/dssd
+Type=ext4
+Options=defaults
+
+[Install]
+WantedBy=multi-user.target
