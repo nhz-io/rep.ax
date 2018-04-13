@@ -1,0 +1,7 @@
+volumes
+certs
+templates
+.editorconfig
+.gitignore
+.dockerignore
+docker-compose.yml
