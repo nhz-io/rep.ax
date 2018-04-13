@@ -44,3 +44,7 @@ services:
       - VIRTUAL_PORT=80
       - LETSENCRYPT_HOST=rep.ax
       - LETSENCRYPT_EMAIL=dev@nhz.io
+
+  pirl-node:
+    image: pirl/pirl-node
+    container_name: pirl-node
