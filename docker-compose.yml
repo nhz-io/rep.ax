@@ -66,3 +66,25 @@ services:
       - 6589:6589
     volumes:
       - ./pirl-ether-proxy/config.json:/config.json
+
+  pirl-node-testnet:
+    image: pirl/pirl-node
+    container_name: pirl-node
+    volumes:
+      - ./pirl-node/start.sh:/root/start.sh
+      - ./volumes/pirl-testnet/data:/root/.pirl/pirl
+      - ./volumes/pirl-testnet/keystore:/root/.pirl/keystore
+
+  pirl-ether-proxy-testnet:
+    build:
+      context: pirl-ether-proxy
+    container_name: pirl-ether-proxy
+    environment:
+      - VIRTUAL_HOST=pirl-testnet.rep.ax
+      - VIRTUAL_PORT=8080
+      - LETSENCRYPT_HOST=pirl-testnet.rep.ax
+      - LETSENCRYPT_EMAIL=dev@nhz.io
+    ports:
+      - 6590:6590
+    volumes:
+      - ./pirl-ether-proxy-testnet/config.json:/config.json
