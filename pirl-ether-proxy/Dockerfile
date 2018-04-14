@@ -13,6 +13,12 @@ RUN cd /ether-proxy && go build -o ether-proxy main.go
 
 FROM alpine
 
+EXPOSE 8080 6589
+
 COPY --from=builder /ether-proxy/ether-proxy /usr/bin
+
+ADD www /www
+
+WORKDIR /
 
 ENTRYPOINT ["/usr/bin/ether-proxy"]
