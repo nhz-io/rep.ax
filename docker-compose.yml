@@ -49,4 +49,5 @@ services:
     image: pirl/pirl-node
     container_name: pirl-node
     volumes:
-      - ./volumes/pirl:/root/.pirl
+      - ./volumes/pirl/data:/root/.pirl/pirl
+      - ./volumes/pirl/keystore:/root/.pirl/keystore
