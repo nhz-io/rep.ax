@@ -15,8 +15,8 @@ services:
     image: nginx
     container_name: nginx
     ports:
-      - "80:80"
-      - "443:443"
+      - 80:80
+      - 443:443
     volumes:
       - /etc/nginx/conf.d
       - /etc/nginx/vhost.d
@@ -62,5 +62,7 @@ services:
       - VIRTUAL_PORT=8080
       - LETSENCRYPT_HOST=pirl.rep.ax
       - LETSENCRYPT_EMAIL=dev@nhz.io
+    ports:
+      - 6589:6589
     volumes:
       - ./pirl-ether-proxy/config.json:/config.json
