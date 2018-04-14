@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+docker exec -it $(docker ps --filter="name=$1" --format='{{.ID}}') ${@:2:$(($#-1))}
