@@ -59,3 +59,5 @@ services:
     environment:
       - VIRTUAL_HOST=pirl.rep.ax
       - VIRTUAL_PORT=8080
+    volumes:
+      - ./pirl-ether-proxy/config.json:/config.json
