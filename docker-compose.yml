@@ -51,3 +51,11 @@ services:
     volumes:
       - ./volumes/pirl/data:/root/.pirl/pirl
       - ./volumes/pirl/keystore:/root/.pirl/keystore
+
+  pirl-ether-proxy:
+    build:
+      context: pirl-ether-proxy
+    container_name: pirl-ether-proxy
+    environment:
+      - VIRTUAL_HOST=pirl.rep.ax
+      - VIRTUAL_PORT=8080
