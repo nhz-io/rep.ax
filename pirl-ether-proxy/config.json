@@ -2,11 +2,11 @@
   "threads": 2,
   "proxy": {
     "listen": "0.0.0.0:6589",
-    "clientTimeout": "3m",
-    "blockRefreshInterval": "100ms",
-    "hashrateWindow": "15m",
+    "clientTimeout": "30m",
+    "blockRefreshInterval": "50ms",
+    "hashrateWindow": "45m",
     "submitHashrate": false,
-    "luckWindow": "24h",
+    "luckWindow": "12h",
     "largeLuckWindow": "72h"
   },
   "frontend": {
@@ -14,16 +14,16 @@
     "login": "admin",
     "password": ""
   },
-  "upstreamCheckInterval": "5s",
+  "upstreamCheckInterval": "1s",
   "upstream": [
     {
       "name": "main",
-      "url": "http://pirl-node-fork:6588",
+      "url": "http://pirl-node:6588",
       "timeout": "10s"
     },
     {
       "name": "backup",
-      "url": "http://pirl-node-fork:6588",
+      "url": "http://pirl-node:6588",
       "timeout": "10s"
     }
   ],

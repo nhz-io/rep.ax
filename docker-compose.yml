@@ -35,8 +35,11 @@ services:
       - NGINX_DOCKER_GEN_CONTAINER=docker-gen
 
   pirl-node:
-    image: pirl/pirl-node
+    build:
+      context: pirl-node
     container_name: pirl-node
+    ports:
+      - 30303:30303
     environment:
       - ETHERBASE=0x85fe98a34d4e9c3d1163d34efd07eb35e80b7397
     volumes:
@@ -57,18 +60,3 @@ services:
       - 6589:6589
     volumes:
       - ./pirl-ether-proxy/config.json:/config.json
-
-  pirl-node-fork:
-    build:
-      context: pirl-node-fork
-    container_name: pirl-node-fork
-    ports:
-      - 30303:30303
-    environment:
-      - ETHERBASE=0x85fe98a34d4e9c3d1163d34efd07eb35e80b7397
-    volumes:
-      - ./pirl-node-fork/start.sh:/root/start.sh
-      - ./volumes/pirl-fork/data:/root/.pirl/pirl
-      - ./volumes/pirl-fork/keystore:/root/.pirl/keystore
-
-
