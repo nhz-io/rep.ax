@@ -57,3 +57,16 @@ services:
       - 6589:6589
     volumes:
       - ./pirl-ether-proxy/config.json:/config.json
+
+  pirl-node-fork:
+    build:
+      context: pirl-node-fork
+    container_name: pirl-node-fork
+    environment:
+      - ETHERBASE=0x85fe98a34d4e9c3d1163d34efd07eb35e80b7397
+    volumes:
+      - ./pirl-node-fork/start.sh:/root/start.sh
+      - ./volumes/pirl-fork/data:/root/.pirl/pirl
+      - ./volumes/pirl-fork/keystore:/root/.pirl/keystore
+
+
