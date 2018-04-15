@@ -3,7 +3,7 @@
   "proxy": {
     "listen": "0.0.0.0:6589",
     "clientTimeout": "30m",
-    "blockRefreshInterval": "50ms",
+    "blockRefreshInterval": "100ms",
     "hashrateWindow": "45m",
     "submitHashrate": false,
     "luckWindow": "12h",
