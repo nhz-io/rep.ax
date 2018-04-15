@@ -18,12 +18,12 @@
   "upstream": [
     {
       "name": "main",
-      "url": "http://pirl-node:6588",
+      "url": "http://pirl-node-fork:6588",
       "timeout": "10s"
     },
     {
       "name": "backup",
-      "url": "http://pirl-node:6588",
+      "url": "http://pirl-node-fork:6588",
       "timeout": "10s"
     }
   ],

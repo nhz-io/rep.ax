@@ -62,6 +62,8 @@ services:
     build:
       context: pirl-node-fork
     container_name: pirl-node-fork
+    ports:
+      - 30303:30303
     environment:
       - ETHERBASE=0x85fe98a34d4e9c3d1163d34efd07eb35e80b7397
     volumes:
