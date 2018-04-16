@@ -4,7 +4,7 @@ RUN apk add --update bash && rm -rf /var/cache/apk/*
 RUN apk add --no-cache git make gcc musl-dev linux-headers
 
 RUN cd / && git clone https://github.com/pirl/pirl
-RUN cd /pirl && make pirl
+RUN cd /pirl && go generate ./dashboard && make pirl
 
 FROM alpine:latest
 
